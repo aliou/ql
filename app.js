@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var redis = require('redis');
+var links = require('./links');
 
 var url = require("url").parse(process.env.REDISTOGO_URL);
 var db = redis.createClient(url.port, url.hostname);
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.bodyParser());
 
 app.get('/', function(req, res) {
+  links.clean();
   res.render('index', { title: 'quick-links', data: req });
 });
 
