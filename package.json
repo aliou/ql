@@ -1,0 +1,11 @@
+{
+  "name": "quick-links",
+  "description": "TBD",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.4.0",
+    "redis": "0.8.6",
+    "ejs": "0.8.4"
+  }
+}
