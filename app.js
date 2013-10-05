@@ -1,12 +1,6 @@
 var express = require('express');
 var path = require('path');
-var redis = require('redis');
 var links = require('./links');
-
-var url = require("url").parse(process.env.REDISTOGO_URL);
-var db = redis.createClient(url.port, url.hostname);
-
-db.auth(url.auth.split(':')[1]);
 
 var app = express();
 
