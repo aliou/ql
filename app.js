@@ -15,6 +15,7 @@ app.use(express.logger());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.bodyParser());
 
 app.get('/', function(req, res) {
   res.render('index', { title: 'quick-links', data: req });
