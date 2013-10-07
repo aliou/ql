@@ -17,6 +17,8 @@ app.get('/', function(req, res) {
   res.render('index', { title: 'quick-links', data: req });
 });
 
+app.get('/link', links.add);
+
 app.listen(port, function() {
   console.log('Listening on port ' + port);
 });
