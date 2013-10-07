@@ -29,7 +29,7 @@ exports.print = function(req, res) {
 };
 
 exports.add = function(req, res) {
-  if (!req.param('url') || !req.param('title')) {
+  if (!req.param('url') && !req.param('title')) {
     res.send('');
     return ;
   }
@@ -40,8 +40,8 @@ exports.add = function(req, res) {
     }
 
     var links = set_links(reply);
-
-    links.push({url: req.param('url'), title: req.param('title'),
+    var title = req.param('title') ? req.param('title') : req.param('url')
+    links.push({url: req.param('url'), title: title,
                date: Date.now()});
 
      db.set('data', JSON.stringify(links));
