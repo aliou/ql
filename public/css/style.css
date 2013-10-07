@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+header {
+  padding-bottom: 5px;
+}
+
+footer {
+  padding-top: 5px;
+}

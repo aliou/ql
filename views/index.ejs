@@ -5,12 +5,18 @@
     <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <ul>
-      <% for (var i = 0; i < links.length; i++) {%>
-        <li><a href="<%= links[i].url %>"><%= links[i].title %></a></li>
-      <%}%>
-    </ul>
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <section>
+      <ul>
+        <% for (var i = 0; i < links.length; i++) {%>
+          <li><a href="<%= links[i].url %>"><%= links[i].title %></a></li>
+        <%}%>
+      </ul>
+    </section>
+    <footer>
+      <a href="javascript:(function(){ _my_script=document.createElement('script'); _my_script.type='text/javascript'; _my_script.src='http://localhost:1234/link?url=' + encodeURIComponent(document.location.href) + '&title=' + encodeURIComponent(document.title); document.getElementsByTagName('head')[0].appendChild(_my_script);})();">Bookmarklet</a>
+    </footer>
   </body>
 </html>
