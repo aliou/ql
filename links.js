@@ -55,7 +55,7 @@ exports.clean = function() {
       return ;
 
     var links = set_links(reply);
-    var one_hour_ago = Date.now() - 60 * 60 * 100;
+    var one_hour_ago = Date.now() - 60 * 10 * 100;
     var new_links = _.reject(links, function(link) {
       return (link.date <= one_hour_ago);
     });

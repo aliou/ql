@@ -1,6 +1,6 @@
 ## Quick-Links
 
-Bookmark page with links expiring after one hour.
+Bookmark page with links expiring after ten minutes.
 
 ### Setup on Heroku
 
