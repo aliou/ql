@@ -5,6 +5,15 @@ var db = redis.createClient(url.port, url.hostname);
 
 db.auth(url.auth.split(':')[1]);
 
+function set_links(reply) {
+  var links;
+  if (!reply || reply == "")
+    links = [];
+  else
+    links = JSON.parse(reply);
+  return (links);
+}
+
 exports.print = function(req, res) {
   exports.clean();
   db.get('data', function (err, reply) {
@@ -13,11 +22,7 @@ exports.print = function(req, res) {
       return ;
     }
 
-    var links;
-    if (!reply || reply == "")
-      links = [];
-    else
-      links = JSON.parse(reply);
+    var links = set_links(reply);
 
     res.render('index', { title: 'quick-links', links: links });
   });
@@ -34,11 +39,7 @@ exports.add = function(req, res) {
       return ;
     }
 
-    var links;
-    if (!reply || reply == "")
-      links = [];
-    else
-      links = JSON.parse(reply);
+    var links = set_links(reply);
 
     links.push({url: req.param('url'), title: req.param('title'),
                date: Date.now()});
@@ -53,7 +54,7 @@ exports.clean = function() {
     if (err)
       return ;
 
-    var links = JSON.parse(reply);
+    var links = set_links(reply);
     var one_hour_ago = Date.now() - 60 * 60 * 100;
     var new_links = _.reject(links, function(link) {
       return (link.date <= one_hour_ago);
