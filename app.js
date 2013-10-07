@@ -12,10 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.bodyParser());
 
-app.get('/', function(req, res) {
-  links.clean();
-  res.render('index', { title: 'quick-links', data: req });
-});
+app.get('/', links.print);
 
 app.get('/link', links.add);
 

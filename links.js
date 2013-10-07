@@ -5,10 +5,34 @@ var db = redis.createClient(url.port, url.hostname);
 
 db.auth(url.auth.split(':')[1]);
 
-exports.add = function(req, res) {
-  db.get('data', function(err, reply) {
-    if (err)
+exports.print = function(req, res) {
+  exports.clean();
+  db.get('data', function (err, reply) {
+    if (err) {
+      res.send('');
       return ;
+    }
+
+    var links;
+    if (!reply || reply == "")
+      links = [];
+    else
+      links = JSON.parse(reply);
+
+    res.render('index', { title: 'quick-links', links: links });
+  });
+};
+
+exports.add = function(req, res) {
+  if (!req.param('url') || !req.param('title')) {
+    res.send('');
+    return ;
+  }
+  db.get('data', function(err, reply) {
+    if (err) {
+      res.send('');
+      return ;
+    }
 
     var links;
     if (!reply || reply == "")
