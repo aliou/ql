@@ -24,7 +24,11 @@ exports.print = function(req, res) {
 
     var links = set_links(reply);
 
-    res.render('index', { title: 'quick-links', links: links, app_url: process.env.APP_URL});
+    res.render('index', {
+      title: 'quick-links',
+      links: links,
+      app_url: process.env.APP_URL
+    });
   });
 };
 
@@ -55,9 +59,9 @@ exports.clean = function() {
       return ;
 
     var links = set_links(reply);
-    var one_hour_ago = Date.now() - 60 * 10 * 100;
+    var delay = Date.now() - 60 * 10 * 100;
     var new_links = _.reject(links, function(link) {
-      return (link.date <= one_hour_ago);
+      return (link.date <= delay);
     });
 
     db.set('data', JSON.stringify(new_links));
