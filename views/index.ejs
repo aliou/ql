@@ -11,7 +11,10 @@
     <section>
       <ul>
         <% for (var i = 0; i < links.length; i++) {%>
-          <li><a href="<%= links[i].url %>"><%= links[i].title %></a></li>
+          <li>
+            <a href="<%= links[i].url %>"><%= links[i].title %></a>
+            <span class="remaining_time"></span>
+          </li>
         <%}%>
       </ul>
     </section>

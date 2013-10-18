@@ -14,3 +14,7 @@ header {
 footer {
   padding-top: 5px;
 }
+
+.remaining_time {
+  color: #505050;
+}
