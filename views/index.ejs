@@ -13,7 +13,7 @@
         <% for (var i = 0; i < links.length; i++) {%>
           <li>
             <a href="<%= links[i].url %>"><%= links[i].title %></a>
-            <span class="remaining_time"></span>
+            <span class="remaining_time">[<%= m(links[i].date).fromNow() %>]</span>
           </li>
         <%}%>
       </ul>
@@ -21,5 +21,6 @@
     <footer>
       <a href="javascript:(function(){_my_script=document.createElement('script');_my_script.type='text/javascript';_my_script.src='<%= app_url %>/link?url=' + encodeURIComponent(document.location.href) + '&title=' + encodeURIComponent(document.title);document.getElementsByTagName('head')[0].appendChild(_my_script);})();">Bookmarklet</a>
     </footer>
+    <script src="/js/moment.min.js"></script>
   </body>
 </html>

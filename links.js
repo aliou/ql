@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var moment = require('moment');
 var redis = require('redis');
 var url = require('url').parse(process.env.REDISTOGO_URL);
 var db = redis.createClient(url.port, url.hostname);
@@ -27,7 +28,8 @@ exports.print = function(req, res) {
     res.render('index', {
       title: 'quick-links',
       links: links,
-      app_url: process.env.APP_URL
+      app_url: process.env.APP_URL,
+      m: moment
     });
   });
 };
@@ -45,8 +47,10 @@ exports.add = function(req, res) {
 
     var links = set_links(reply);
     var title = req.param('title') ? req.param('title') : req.param('url')
-    links.push({url: req.param('url'), title: title,
-               date: Date.now()});
+    links.push({url: req.param('url'),
+               title: title,
+               date: Date.now()
+    });
 
      db.set('data', JSON.stringify(links));
      res.send(links);
