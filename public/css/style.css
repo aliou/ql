@@ -1,20 +1,33 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #F0F3F5;
+  color: #242627;
 }
 
 a {
-  color: #00B7FF;
+  color: #C1152E;
+  text-decoration: none;
 }
 
-header {
-  padding-bottom: 5px;
+a:hover {
+  text-decoration: underline;
 }
 
-footer {
-  padding-top: 5px;
+h1 {
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+#content {
+  width: 630px;
+  margin: 100px auto;
+}
+
+#footer {
+  margin-top: 25px;
 }
 
 .remaining_time {
-  color: #8F8F8F;
+  color: #9DA5A8;
 }
