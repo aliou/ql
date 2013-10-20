@@ -59,7 +59,7 @@ exports.clean = function() {
       return ;
 
     var links = set_links(reply);
-    var delay = Date.now() - 60 * 10 * 100;
+    var delay = Date.now() - 60 * 10 * 1000;
     var new_links = _.reject(links, function(link) {
       return (link.date <= delay);
     });
