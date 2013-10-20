@@ -26,7 +26,6 @@ exports.print = function(req, res) {
     var links = set_links(reply);
 
     res.render('index', {
-      title: 'quick-links',
       links: links,
       app_url: process.env.APP_URL,
       m: moment
