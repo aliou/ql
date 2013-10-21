@@ -12,7 +12,7 @@ heroku create
 heroku addons:add redistogo:nano
 
 # Set the app name
-heroku config:set APP_URL "http://dharma.is"
+heroku config:set APP_URL "dharma.is"
 
 # Deploy
 git push heroku master
