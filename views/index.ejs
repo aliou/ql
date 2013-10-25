@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Quick Links | <%= app_url %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel='stylesheet' href='/css/style.css' />
   </head>
@@ -12,6 +13,7 @@
         <% for (var i = 0; i < links.length; i++) {%>
           <li>
             <a href="<%= links[i].url %>"><%= links[i].title %></a>
+            <br />
             <span class="remaining_time">[<%= m(links[i].date).fromNow() %>]</span>
           </li>
         <%}%>

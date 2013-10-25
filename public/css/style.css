@@ -1,6 +1,7 @@
 body {
   padding: 50px;
-  font: 0.78em "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   background: #F0F3F5;
   color: #242627;
 }
@@ -19,15 +20,34 @@ h1 {
   font-size: 2em;
 }
 
+li {
+  margin-bottom: 10px;
+}
+
 #content {
-  width: 630px;
   margin: 10px auto;
 }
 
 #footer {
-  margin-top: 25px;
+  display: none;
 }
 
 .remaining_time {
+  font-size: 0.9em;
   color: #9DA5A8;
+}
+
+@media screen and (min-width: 28.75em) {
+  body {
+    font-size: 18px;
+  }
+
+  #content {
+    width: 630px;
+  }
+
+  #footer {
+    display: block;
+    margin-top: 25px;
+  }
 }
