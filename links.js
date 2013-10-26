@@ -27,7 +27,7 @@ exports.print = function(req, res) {
 };
 
 exports.add = function(req, res) {
-  if (!req.param('url') && !req.param('title')) {
+  if (!req.param('url')) {
     res.send('');
     return ;
   }
