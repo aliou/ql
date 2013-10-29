@@ -11,7 +11,7 @@ heroku create
 # Add the Redis To Go addon
 heroku addons:add redistogo:nano
 
-# Set the app name
+# Set the app URL
 heroku config:set APP_URL "dharma.is"
 
 # Deploy
