@@ -45,7 +45,8 @@ exports.add = function(req, res) {
     });
 
      db.set('data', JSON.stringify(links));
-     res.send(links);
+     res.redirect('/');
+     // res.send(links);
   });
 };
 
