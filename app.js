@@ -16,6 +16,8 @@ app.get('/', links.print);
 
 app.get('/link', links.add);
 
+app.post('/add', links.add);
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log('Listening on port ' + port);

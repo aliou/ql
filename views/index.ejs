@@ -18,6 +18,12 @@
           </li>
         <%}%>
       </ul>
+      <div id="form">
+        <form action="/add" method="post">
+          <input type="text" name="url">
+          <input type="submit">
+        </form>
+      </div>
       <div id="footer">
         <a
           href="javascript:(function(){_my_script=document.createElement('script');_my_script.type='text/javascript';_my_script.src='http://<%= app_url %>/link?url=' + encodeURIComponent(document.location.href) + '&title=' + encodeURIComponent(document.title);document.getElementsByTagName('head')[0].appendChild(_my_script);})();">Bookmarklet</a>
