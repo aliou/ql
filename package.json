@@ -1,6 +1,7 @@
 {
   "name": "quick-links",
-  "description": "TBD",
+  "description": "Timed bookmark page.",
+  "author": "Aliou Diallo <code@aliou.me>",
   "version": "0.0.1",
   "private": true,
   "engines": {
