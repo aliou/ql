@@ -25,6 +25,7 @@ the bookmarklet to your bookmark bar.
 
 ### License
 
+```
 The ☺ Licence, 2013 Aliou Diallo <code@aliou.me>
 
 By attaching this document to the given files (the “work”), you, the licensee,
@@ -42,3 +43,4 @@ optionally be included in copies or portions of the work.
 The work is provided “as is”, without warranty or support, express or implied.
 The author(s) are not liable for any damages, misuse, or other claim, whether
 from or as a consequence of usage of the given work.
+```
