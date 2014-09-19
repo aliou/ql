@@ -1,0 +1,12 @@
+{
+  "name": "Quick Links",
+  "description": "Timed Bookmarks.",
+  "website": "https://github.com/aliou/quick-links/",
+  "repository": "https://github.com/aliou/quick-links/",
+  "addons": [ "redistogo" ],
+  "env": {
+    "APP_URL": {
+      "description": "The URL of the app."
+    }
+  }
+}

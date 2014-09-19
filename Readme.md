@@ -4,6 +4,10 @@ Bookmark page with links expiring after ten minutes.
 
 ### Setup on Heroku
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/aliou/quick-links/)
+
+#### Manual Deploy
+
 ```sh
 # Create Application
 heroku create
